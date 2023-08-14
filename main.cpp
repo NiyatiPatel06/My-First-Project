@@ -16,6 +16,7 @@ int main()
 	std::cout << "\033[H\033[J";                       // clear the screen in most terminals
 	for (char c : sentence) {
 		findCharacter(c,a);
+		std::this_thread::sleep_for(std::chrono::seconds(1));
 		if (c == ' ') 
 		     a += 10;
 		else
@@ -26,7 +27,7 @@ int main()
 	//std::cout << "\r\033[5A";
 
 	// Delay for demonstration purposes
-	//std::this_thread::sleep_for(std::chrono::seconds(1));
+	std::this_thread::sleep_for(std::chrono::seconds(1));
 
 	return 0;
 }
@@ -295,7 +296,7 @@ void findCharacter(char c,int a) {
 		std::cout << "\r\033[" << a << "C" << "######" << std::endl;
 		break;
 	default:
-		cout << "Nothing";
+		cout << " ";
 	
 	}
 }
